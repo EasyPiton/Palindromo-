@@ -1,0 +1,45 @@
+menuF = False
+while menuF == False:
+    menu = int(input(" 1.- Numero primo \n 2.- Factorial \n 3.- Palindrome \n 4.- Salir \n Seleccione opcion: "))
+    if menu == 0:
+        menuF = True
+        print ("Has salido del menu.")
+        break
+    
+    if menu == 1:
+        numero= int(input("¿Qué número quieres saber si es primo? "))
+        valor= range(2,numero)
+        contador = 0
+        for n in valor:
+          if numero % n == 0:
+            contador +=1
+            print("divisor:", n)
+        if contador > 0 :
+          print("El numero no es primo" )
+        else:
+          print("El numero es primo")
+
+    if menu == 2:
+        numero=int(input("Ingrese Numero del 1 al 15: " ))
+        factorial=1
+        if numero !=0:
+            for i in range(1,numero+1):
+                factorial=factorial*i
+        print("El factorial de",numero,"Es: ",factorial)
+
+    if menu== 3:
+        igual, aux = 0, 0
+        texto = input("Ingrese la palabra que desea palindromear: ")
+        for ind in reversed(range(0, len(texto))):
+          if texto[ind].lower() == texto[aux].lower():
+            igual += 1
+          aux += 1
+        if len(texto) == igual:
+          print("El texto es palindromo!")
+        else:
+          print("El texto no es palindromo!")
+    if menu==4:
+        print("Aplicacion Cerrada")
+        break
+    
+        
